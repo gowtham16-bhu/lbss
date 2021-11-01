@@ -11,17 +11,26 @@ function init(){
 init();
 
 function view(){
-
-
-  let data= localStorage.getItem('rowValue');
-  const employee = JSON.parse(data);
   
-  document.getElementById("name").value = employee.name;
-  document.getElementById("number").value =employee.number;
-  document.getElementById("email").value = employee.email;
-  document.getElementById("address").value = employee.address;
-  document.getElementById("city").value = employee.city;
-  document.getElementById("role").value = employee.role;
+ 
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+const product = urlParams.get('idx')
+console.log(product);
+
+  const val =product
+  let datas= localStorage.getItem('employees');
+  const employee = JSON.parse(datas);
+
+
+   
+  document.getElementById("name").value = employee[val].name;
+  document.getElementById("number").value =employee[val].number;
+  document.getElementById("email").value = employee[val].email;
+  document.getElementById("address").value = employee[val].address;
+  document.getElementById("city").value = employee[val].city;
+  document.getElementById("role").value = employee[val].role;
     
 }
 let employees = [];
@@ -37,9 +46,14 @@ let employeeIndex = null;
 function updateEmployee(e){
   let datas= localStorage.getItem('employees');
   const employees = JSON.parse(datas);
-  let datass= localStorage.getItem('rowValue');
-  const employed= JSON.parse(datass);
-  const val =employed.ind
+ 
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+const product = urlParams.get('idx')
+console.log(product);
+
+  const val =product
 
     
     event.preventDefault();

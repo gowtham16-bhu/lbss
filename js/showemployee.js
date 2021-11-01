@@ -43,28 +43,11 @@ function showTable() {
 }
 
 function editEmployee(index){
-  var name = employees[index].name;
-  var number = employees[index].number;
-  var email = employees[index].email;
-  var address= employees[index].address;
-  var city = employees[index].city;
-  var role = employees[index].role;
-  var ind = index;
-  const rowValue = {name,number,email,address,city,role,ind};
-  localStorage.setItem('rowValue',JSON.stringify(rowValue));
+
   location.href = "updateemployee.html?idx="+index;
 
 }
 function show(index) {
-  var name = employees[index].name;
-  var number = employees[index].number;
-  var email = employees[index].email;
-  var address= employees[index].address;
-  var city = employees[index].city;
-  var role = employees[index].role;
-  var ind = index
-  const rowValue = {name,number,email,address,city,role,ind};
-  localStorage.setItem('rowValue',JSON.stringify(rowValue));
   
   location.href="viewemployee.html?idx="+index;
 
